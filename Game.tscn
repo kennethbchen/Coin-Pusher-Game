@@ -1,10 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://b8h2tirg5la1b"]
+[gd_scene load_steps=16 format=3 uid="uid://cw4metkrk77oe"]
 
 [ext_resource type="PackedScene" uid="uid://dco6gh876g323" path="res://Scenes/Token.tscn" id="1_flwpa"]
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_ppn4k"]
+[ext_resource type="Script" path="res://Scripts/BoxArea.gd" id="3_ly35t"]
 [ext_resource type="Script" path="res://Scripts/Pusher.gd" id="3_usv3y"]
 [ext_resource type="Material" uid="uid://hu2ca8426jj6" path="res://Materials/TestMat2.tres" id="4_blkp5"]
 [ext_resource type="PackedScene" uid="uid://b2uf3gdkkx4wt" path="res://Scenes/Bounding Wall.tscn" id="5_i7ahu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ss8l5"]
+size = Vector3(7.35031, 0.130174, 1.58917)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_v5i0y"]
 rough = true
@@ -30,7 +34,12 @@ size = Vector3(3, 1, 8)
 
 [node name="Game" type="Node3D"]
 script = ExtResource("1_ppn4k")
-token = ExtResource("1_flwpa")
+token_scene = ExtResource("1_flwpa")
+
+[node name="SpawnArea" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.90271, -2.1265)
+shape = SubResource("BoxShape3D_ss8l5")
+script = ExtResource("3_ly35t")
 
 [node name="Env" type="Node" parent="."]
 

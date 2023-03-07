@@ -1,14 +1,24 @@
 extends Node3D
 
-@export var token: PackedScene
+@export var token_scene: PackedScene
 
 @onready var camera = $Env/Camera3D
 @onready var token_parent = $Tokens
 var cast_from = null
 var cast_to = null
 
+# --- Temp Stuff ----
+
+@onready var spawn_area: = $SpawnArea as BoxArea
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
+	
+	for i in range(0, 30):
+		var token = _create_token()
+		token.position = spawn_area.get_random_point()
+		
 	pass # Replace with function body.
 
 func _unhandled_input(event):
@@ -28,12 +38,16 @@ func _physics_process(delta):
 		if result:
 			print("hit at ", result.position)
 			
-			var obj = token.instantiate()
-			token_parent.add_child(obj)
-			obj.position = result.position + Vector3(0, 2, 0)
+			var token = _create_token()
+			token.position = result.position + Vector3(0, 2, 0)
 			
 		cast_from = null
 		cast_to = null
+
+func _create_token():
+	var token = token_scene.instantiate()
+	token_parent.add_child(token)
+	return token
 
 func _on_body_fell(body: Node3D):
 	print(body)
