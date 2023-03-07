@@ -17,8 +17,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	
-	var weight = sin(Time.get_ticks_msec() / 1000.0 * push_frequency) + 1
-	
+	var weight = (-cos( (Time.get_ticks_msec() / 1000.0) * push_frequency) + 1) / 2
 	position = lerp(_init_position, _init_position + (push_direction * push_distance), weight)
 
 func _process(delta):

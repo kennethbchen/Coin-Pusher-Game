@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b2uf3gdkkx4wt" path="res://Scenes/Bounding Wall.tscn" id="5_i7ahu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ss8l5"]
-size = Vector3(12.8731, 0.130174, 4.13818)
+size = Vector3(14.6477, 0.130174, 4.13818)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_v5i0y"]
 rough = true
@@ -75,6 +75,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.156359, 5.67861)
 physics_material_override = SubResource("PhysicsMaterial_mbf4w")
 script = ExtResource("3_usv3y")
 push_direction = Vector3(0, 0, -1)
+push_distance = 2.0
 push_frequency = 1.5
 metadata/_edit_group_ = true
 

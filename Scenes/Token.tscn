@@ -17,7 +17,7 @@ height = 0.2
 
 [node name="Token" type="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.228994, 0)
-mass = 0.01
+mass = 0.02
 physics_material_override = SubResource("PhysicsMaterial_2hsnt")
 continuous_cd = true
 
