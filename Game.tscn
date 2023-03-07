@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cw4metkrk77oe"]
+[gd_scene load_steps=18 format=3 uid="uid://cw4metkrk77oe"]
 
 [ext_resource type="PackedScene" uid="uid://dco6gh876g323" path="res://Scenes/Token.tscn" id="1_flwpa"]
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_ppn4k"]
@@ -8,27 +8,33 @@
 [ext_resource type="PackedScene" uid="uid://b2uf3gdkkx4wt" path="res://Scenes/Bounding Wall.tscn" id="5_i7ahu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ss8l5"]
-size = Vector3(7.35031, 0.130174, 1.58917)
+size = Vector3(12.8731, 0.130174, 4.13818)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_v5i0y"]
 rough = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gwtrq"]
-size = Vector3(10, 1, 10)
+size = Vector3(15, 0.25, 10)
 
 [sub_resource type="BoxMesh" id="BoxMesh_7leqs"]
-size = Vector3(10, 0.25, 10)
+size = Vector3(15, 0.25, 10)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mbf4w"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7ucsw"]
-size = Vector3(8, 1, 5)
+size = Vector3(12, 1, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lwvvu"]
-size = Vector3(10, 1, 5)
+size = Vector3(12, 1, 5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_v5vy1"]
+size = Vector3(1, 1, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0t07r"]
+size = Vector3(1, 1, 10)
 
 [sub_resource type="BoxMesh" id="BoxMesh_quanp"]
-size = Vector3(3, 1, 8)
+size = Vector3(3, 0.5, 12)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_5vig4"]
 
@@ -37,14 +43,15 @@ script = ExtResource("1_ppn4k")
 token_scene = ExtResource("1_flwpa")
 
 [node name="SpawnArea" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.90271, -2.1265)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.459464, -0.871376)
 shape = SubResource("BoxShape3D_ss8l5")
+disabled = true
 script = ExtResource("3_ly35t")
 
 [node name="Env" type="Node" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="Env"]
-transform = Transform3D(-1, 2.96134e-08, -8.22543e-08, -5.57947e-08, 0.508155, 0.861266, 6.7303e-08, 0.861266, -0.508155, 0, 6.25619, -3.41118)
+transform = Transform3D(-1, 2.96134e-08, -8.22544e-08, -3.9863e-08, 0.682917, 0.730496, 7.78054e-08, 0.730496, -0.682917, 0, 6.98721, -4.59776)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Env"]
 transform = Transform3D(1, 0, 0, 0, 0.0991287, 0.995075, 0, -0.995075, 0.0991287, -0.00509369, 8.25412, 0.0035336)
@@ -54,9 +61,9 @@ transform = Transform3D(1, 0, 0, 0, 0.0991287, 0.995075, 0, -0.995075, 0.0991287
 [node name="Floor" type="StaticBody3D" parent="Table"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.066)
 physics_material_override = SubResource("PhysicsMaterial_v5i0y")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Table/Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.360596, 0)
 shape = SubResource("BoxShape3D_gwtrq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Table/Floor"]
@@ -64,11 +71,12 @@ transform = Transform3D(1.00924, 0, 0, 0, 1.00924, 0, 0, 0, 1.00924, 0, 0, 0)
 mesh = SubResource("BoxMesh_7leqs")
 
 [node name="Pusher" type="AnimatableBody3D" parent="Table"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.30044)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.156359, 5.67861)
 physics_material_override = SubResource("PhysicsMaterial_mbf4w")
 script = ExtResource("3_usv3y")
 push_direction = Vector3(0, 0, -1)
 push_frequency = 1.5
+metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Table/Pusher"]
 material_override = ExtResource("4_blkp5")
@@ -78,17 +86,26 @@ mesh = SubResource("BoxMesh_7ucsw")
 shape = SubResource("BoxShape3D_lwvvu")
 
 [node name="Wall 1" parent="Table" instance=ExtResource("5_i7ahu")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 4, 0.5, -0.5)
+transform = Transform3D(-4.25911e-08, -0.97437, -0.224951, 1, -4.37114e-08, 0, -9.83292e-09, -0.224951, 0.97437, 7, 0.5, -0.5)
+
+[node name="MeshInstance3D" parent="Table/Wall 1" index="0"]
+mesh = SubResource("BoxMesh_v5vy1")
 
 [node name="Wall 2" parent="Table" instance=ExtResource("5_i7ahu")]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -4, 0.5, -0.5)
+transform = Transform3D(-4.25911e-08, 0.97437, 0.224951, -1, -4.37114e-08, 0, 9.83292e-09, -0.224951, 0.97437, -7, 0.5, -0.5)
+
+[node name="MeshInstance3D" parent="Table/Wall 2" index="0"]
+mesh = SubResource("BoxMesh_0t07r")
 
 [node name="Wall 3" parent="Table" instance=ExtResource("5_i7ahu")]
-transform = Transform3D(1.91069e-15, -4.37114e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -4.37114e-08, 0, 1.8851, 0.668068)
+transform = Transform3D(1.91069e-15, -4.37114e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -4.37114e-08, 0, 2.04518, 4.01393)
 
 [node name="MeshInstance3D" parent="Table/Wall 3" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96046e-08, -0.5, -1.77636e-15)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("BoxMesh_quanp")
+
+[node name="CollisionShape3D" parent="Table/Wall 3" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.241927, 1.0575e-08)
 
 [node name="BottomHitbox" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.77436, 0)
@@ -100,4 +117,6 @@ shape = SubResource("WorldBoundaryShape3D_5vig4")
 
 [connection signal="body_entered" from="BottomHitbox" to="." method="_on_body_fell"]
 
+[editable path="Table/Wall 1"]
+[editable path="Table/Wall 2"]
 [editable path="Table/Wall 3"]

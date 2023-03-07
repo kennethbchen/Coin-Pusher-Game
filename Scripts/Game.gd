@@ -15,7 +15,7 @@ var cast_to = null
 func _ready():
 	
 	
-	for i in range(0, 30):
+	for i in range(0, 40):
 		var token = _create_token()
 		token.position = spawn_area.get_random_point()
 		
