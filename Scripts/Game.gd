@@ -50,6 +50,6 @@ func _create_token():
 	return token
 
 func _on_body_fell(body: Node3D):
-	print(body)
-	body.queue_free()
-	pass
+	
+	if body is Token:
+		body.destroy()
