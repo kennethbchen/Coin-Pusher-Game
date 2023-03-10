@@ -15,6 +15,10 @@ run/main_scene="res://Game.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
+[filesystem]
+
+import/blender/blender3_path="C:\\Program Files\\Blender Foundation\\Blender 3.4\\blender-launcher.exe"
+
 [input]
 
 game_action={
