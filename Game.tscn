@@ -11,7 +11,6 @@
 size = Vector3(12.9449, 0.0645659, 4.13818)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_v5i0y"]
-rough = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gwtrq"]
 size = Vector3(15, 0.25, 10)
