@@ -50,7 +50,7 @@ script = ExtResource("3_ly35t")
 [node name="Env" type="Node" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="Env"]
-transform = Transform3D(-1, 2.96134e-08, -8.22544e-08, -3.9863e-08, 0.682917, 0.730496, 7.78054e-08, 0.730496, -0.682917, 0, 6.98721, -5.27219)
+transform = Transform3D(-1, 2.96134e-08, -8.22544e-08, -3.9863e-08, 0.682917, 0.730496, 7.78054e-08, 0.730496, -0.682917, 0, 6.353, -5.121)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Env"]
 transform = Transform3D(1, 0, 0, 0, 0.0991287, 0.995075, 0, -0.995075, 0.0991287, -0.00509369, 8.25412, 0.0035336)
@@ -73,6 +73,7 @@ mesh = SubResource("BoxMesh_7leqs")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.156359, 5.67861)
 physics_material_override = SubResource("PhysicsMaterial_mbf4w")
 script = ExtResource("3_usv3y")
+enabled = false
 push_direction = Vector3(0, 0, -1)
 push_distance = 2.0
 push_frequency = 1.5

@@ -11,8 +11,8 @@ extends RigidBody3D
 # Instead, we approximate the cylinder with box collision shapes
 # However, adding multiple collision shapes appears to do a strange thing:
 # The pusher doesn't apply friction to the token sometimes
-@export_range(1, 8) var num_box_colliders = 2
-@export_range(0.001, 10, 0.001, "or_greater") var height: float = 0.2
+@export_range(1, 8) var num_box_colliders = 4
+@export_range(0.001, 10, 0.001, "or_greater") var height: float = 0.15
 @export_range(0.001, 10, 0.001, "or_greater") var radius: float = 0.5
 
 var cylinder_mesh: CylinderMesh
