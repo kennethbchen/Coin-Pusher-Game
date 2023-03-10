@@ -18,8 +18,6 @@ func _ready():
 	for i in range(0, 60):
 		var token = _create_token()
 		token.position = spawn_area.get_random_point()
-		
-	pass # Replace with function body.
 
 func _unhandled_input(event):
 	

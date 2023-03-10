@@ -1,25 +1,47 @@
-[gd_scene load_steps=6 format=3 uid="uid://dco6gh876g323"]
+[gd_scene load_steps=9 format=3 uid="uid://dco6gh876g323"]
 
 [ext_resource type="Material" uid="uid://jdclmigjfj0o" path="res://Materials/TestMat.tres" id="1_usiua"]
 [ext_resource type="Script" path="res://Scripts/Token.gd" id="1_y4slo"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2hsnt"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_3dodw"]
-size = Vector3(0.707107, 0.2, 0.707107)
-
 [sub_resource type="CylinderMesh" id="CylinderMesh_11f54"]
 material = ExtResource("1_usiua")
 height = 0.2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3j24m"]
+size = Vector3(0.707107, 0.2, 0.707107)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y7veg"]
+size = Vector3(0.707107, 0.2, 0.707107)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b8kcg"]
+size = Vector3(0.707107, 0.2, 0.707107)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8rm55"]
+size = Vector3(0.707107, 0.2, 0.707107)
 
 [node name="Token" type="RigidBody3D"]
 mass = 0.02
 physics_material_override = SubResource("PhysicsMaterial_2hsnt")
 continuous_cd = true
 script = ExtResource("1_y4slo")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_3dodw")
+num_box_colliders = 4
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CylinderMesh_11f54")
+
+[node name="@@42000" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_3j24m")
+
+[node name="@@42001" type="CollisionShape3D" parent="."]
+transform = Transform3D(-0.448074, 0, 0.893997, 0, 1, 0, -0.893997, 0, -0.448074, 0, 0, 0)
+shape = SubResource("BoxShape3D_y7veg")
+
+[node name="@@42002" type="CollisionShape3D" parent="."]
+transform = Transform3D(-0.59846, 0, -0.801153, 0, 1, 0, 0.801153, 0, -0.59846, 0, 0, 0)
+shape = SubResource("BoxShape3D_b8kcg")
+
+[node name="@@42003" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.984382, 0, -0.176046, 0, 1, 0, 0.176046, 0, 0.984382, 0, 0, 0)
+shape = SubResource("BoxShape3D_8rm55")
