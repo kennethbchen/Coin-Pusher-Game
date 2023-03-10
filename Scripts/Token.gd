@@ -30,12 +30,10 @@ func _ready():
 	cylinder_mesh.height = height
 	
 	mesh.scale = Vector3.ZERO
-	gravity_scale = -0.1
 	var tween = get_tree().create_tween()
 	tween.set_ease(Tween.EASE_OUT)
 	tween.set_trans(Tween.TRANS_BACK)
 	tween.tween_property(mesh, "scale", Vector3(1,1,1), 0.25)
-	tween.tween_callback(func(): gravity_scale = 1)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
