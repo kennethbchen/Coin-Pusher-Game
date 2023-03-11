@@ -8,8 +8,7 @@
         {
             "name" : "Scene",
             "nodes" : [
-                0,
-                1
+                0
             ]
         }
     ],
@@ -17,10 +16,6 @@
         {
             "mesh" : 0,
             "name" : "Machine"
-        },
-        {
-            "mesh" : 1,
-            "name" : "Pusher"
         }
     ],
     "meshes" : [
@@ -36,26 +31,13 @@
                     "indices" : 3
                 }
             ]
-        },
-        {
-            "name" : "Circle.002",
-            "primitives" : [
-                {
-                    "attributes" : {
-                        "POSITION" : 4,
-                        "TEXCOORD_0" : 5,
-                        "NORMAL" : 6
-                    },
-                    "indices" : 7
-                }
-            ]
         }
     ],
     "accessors" : [
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 544,
+            "count" : 546,
             "max" : [
                 25.547374725341797,
                 1.4140355587005615,
@@ -71,13 +53,13 @@
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 544,
+            "count" : 546,
             "type" : "VEC2"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 544,
+            "count" : 546,
             "type" : "VEC3"
         },
         {
@@ -85,95 +67,37 @@
             "componentType" : 5123,
             "count" : 864,
             "type" : "SCALAR"
-        },
-        {
-            "bufferView" : 4,
-            "componentType" : 5126,
-            "count" : 288,
-            "max" : [
-                15.743019104003906,
-                0.5965674519538879,
-                15.524176597595215
-            ],
-            "min" : [
-                -15.743019104003906,
-                -0.5965674519538879,
-                -15.524177551269531
-            ],
-            "type" : "VEC3"
-        },
-        {
-            "bufferView" : 5,
-            "componentType" : 5126,
-            "count" : 288,
-            "type" : "VEC2"
-        },
-        {
-            "bufferView" : 6,
-            "componentType" : 5126,
-            "count" : 288,
-            "type" : "VEC3"
-        },
-        {
-            "bufferView" : 7,
-            "componentType" : 5123,
-            "count" : 432,
-            "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 6528,
+            "byteLength" : 6552,
             "byteOffset" : 0,
             "target" : 34962
         },
         {
             "buffer" : 0,
-            "byteLength" : 4352,
-            "byteOffset" : 6528,
+            "byteLength" : 4368,
+            "byteOffset" : 6552,
             "target" : 34962
         },
         {
             "buffer" : 0,
-            "byteLength" : 6528,
-            "byteOffset" : 10880,
+            "byteLength" : 6552,
+            "byteOffset" : 10920,
             "target" : 34962
         },
         {
             "buffer" : 0,
             "byteLength" : 1728,
-            "byteOffset" : 17408,
-            "target" : 34963
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 3456,
-            "byteOffset" : 19136,
-            "target" : 34962
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 2304,
-            "byteOffset" : 22592,
-            "target" : 34962
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 3456,
-            "byteOffset" : 24896,
-            "target" : 34962
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 864,
-            "byteOffset" : 28352,
+            "byteOffset" : 17472,
             "target" : 34963
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 29216,
+            "byteLength" : 19200,
             "uri" : "CoinPusher.bin"
         }
     ]
