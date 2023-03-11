@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cw4metkrk77oe"]
+[gd_scene load_steps=22 format=3 uid="uid://cw4metkrk77oe"]
 
 [ext_resource type="PackedScene" uid="uid://dco6gh876g323" path="res://Scenes/Token.tscn" id="1_flwpa"]
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_ppn4k"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/BoxArea.gd" id="3_ly35t"]
 [ext_resource type="Script" path="res://Scripts/Pusher.gd" id="3_usv3y"]
 [ext_resource type="Material" uid="uid://hu2ca8426jj6" path="res://Materials/TestMat2.tres" id="4_blkp5"]
+[ext_resource type="Material" uid="uid://knf57an1tcox" path="res://Materials/TestMat3.tres" id="6_iueic"]
 [ext_resource type="PackedScene" uid="uid://c40s12674ymbj" path="res://Models/CoinPusher/CoinPusher.gltf" id="7_bk6p4"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_nub80"]
@@ -68,10 +69,14 @@ fov = 80.0
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Env"]
 transform = Transform3D(0.616086, 0.785814, 0.0541755, 0.0837063, -0.133705, 0.98748, 0.783218, -0.603838, -0.148152, -0.00509369, 8.25412, 0.0035336)
 shadow_enabled = true
+shadow_opacity = 0.83
 
 [node name="Table" type="Node3D" parent="."]
 
 [node name="CoinPusher" parent="Table" instance=ExtResource("7_bk6p4")]
+
+[node name="Machine" parent="Table/CoinPusher" index="0"]
+material_override = ExtResource("6_iueic")
 
 [node name="Pusher" type="AnimatableBody3D" parent="Table"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.156359, -15.5633)
@@ -134,6 +139,7 @@ shape = SubResource("WorldBoundaryShape3D_egkv5")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Table/Colliders/Back"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.465317)
+material_override = ExtResource("6_iueic")
 mesh = SubResource("BoxMesh_eduah")
 
 [node name="Roof" type="StaticBody3D" parent="Table/Colliders"]
@@ -151,4 +157,9 @@ shape = SubResource("WorldBoundaryShape3D_5vig4")
 
 [node name="Tokens" type="Node" parent="."]
 
+[node name="Token" parent="." instance=ExtResource("1_flwpa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.64923, 1.127, -20.3721)
+
 [connection signal="body_entered" from="BottomHitbox" to="." method="_on_body_fell"]
+
+[editable path="Table/CoinPusher"]
