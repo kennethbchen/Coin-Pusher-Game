@@ -28,6 +28,7 @@ func _ready():
 	cylinder_mesh.bottom_radius = radius
 	cylinder_mesh.height = height
 	
+	linear_velocity.y = -5
 	if not Engine.is_editor_hint():
 		mesh.scale = Vector3.ZERO
 		var tween = get_tree().create_tween()
