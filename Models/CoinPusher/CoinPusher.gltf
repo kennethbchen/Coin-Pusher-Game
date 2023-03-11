@@ -37,7 +37,7 @@
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 546,
+            "count" : 456,
             "max" : [
                 25.547374725341797,
                 1.4140355587005615,
@@ -53,51 +53,51 @@
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 546,
+            "count" : 456,
             "type" : "VEC2"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 546,
+            "count" : 456,
             "type" : "VEC3"
         },
         {
             "bufferView" : 3,
             "componentType" : 5123,
-            "count" : 864,
+            "count" : 720,
             "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 6552,
+            "byteLength" : 5472,
             "byteOffset" : 0,
             "target" : 34962
         },
         {
             "buffer" : 0,
-            "byteLength" : 4368,
-            "byteOffset" : 6552,
+            "byteLength" : 3648,
+            "byteOffset" : 5472,
             "target" : 34962
         },
         {
             "buffer" : 0,
-            "byteLength" : 6552,
-            "byteOffset" : 10920,
+            "byteLength" : 5472,
+            "byteOffset" : 9120,
             "target" : 34962
         },
         {
             "buffer" : 0,
-            "byteLength" : 1728,
-            "byteOffset" : 17472,
+            "byteLength" : 1440,
+            "byteOffset" : 14592,
             "target" : 34963
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 19200,
+            "byteLength" : 16032,
             "uri" : "CoinPusher.bin"
         }
     ]

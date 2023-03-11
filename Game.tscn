@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cw4metkrk77oe"]
+[gd_scene load_steps=21 format=3 uid="uid://cw4metkrk77oe"]
 
 [ext_resource type="PackedScene" uid="uid://dco6gh876g323" path="res://Scenes/Token.tscn" id="1_flwpa"]
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_ppn4k"]
@@ -13,7 +13,7 @@ dof_blur_far_distance = 13.09
 dof_blur_amount = 0.02
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ss8l5"]
-size = Vector3(8.70717, 0.654592, 5.45142)
+size = Vector3(10.6535, 0.0553397, 4.59185)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mbf4w"]
 
@@ -26,19 +26,13 @@ size = Vector3(9.2, 1, 5)
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_v5i0y"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gwtrq"]
-size = Vector3(15, 0.25, 10)
+size = Vector3(15, 5.90867, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lss3s"]
-size = Vector3(1.09942, 10.7226, 7.95525)
+size = Vector3(1.09942, 10.7226, 5.57271)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_skav7"]
-size = Vector3(1.09942, 13.8097, 5.16532)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ykq4p"]
-size = Vector3(1.09942, 10.7226, 7.95525)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_6yukm"]
-size = Vector3(1.09942, 13.8097, 5.16532)
+size = Vector3(1.09942, 13.8097, 5.25509)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_egkv5"]
 plane = Plane(0, 0, -1, 0)
@@ -60,7 +54,7 @@ environment = ExtResource("3_e7xe6")
 camera_attributes = SubResource("CameraAttributesPractical_nub80")
 
 [node name="SpawnArea" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.799474, -19.6024)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.799474, -19.8204)
 shape = SubResource("BoxShape3D_ss8l5")
 disabled = true
 script = ExtResource("3_ly35t")
@@ -68,7 +62,7 @@ script = ExtResource("3_ly35t")
 [node name="Env" type="Node" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="Env"]
-transform = Transform3D(-1, 2.96134e-08, -8.22544e-08, -2.63918e-08, 0.794722, 0.606974, 8.33439e-08, 0.606974, -0.794722, -9.53674e-07, 6.42148, -26.0892)
+transform = Transform3D(-1, 2.96134e-08, -8.22544e-08, -2.63918e-08, 0.794722, 0.606974, 8.33439e-08, 0.606974, -0.794722, -9.53674e-07, 5.56759, -25.1778)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Env"]
 transform = Transform3D(0.599191, 0.796663, -0.079363, -0.481973, 0.438096, 0.758798, 0.639274, -0.416415, 0.646473, -0.00509369, 8.25412, 0.0035336)
@@ -78,13 +72,13 @@ transform = Transform3D(0.599191, 0.796663, -0.079363, -0.481973, 0.438096, 0.75
 [node name="CoinPusher" parent="Table" instance=ExtResource("7_bk6p4")]
 
 [node name="Pusher" type="AnimatableBody3D" parent="Table"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.156359, -13.0322)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.156359, -15.5633)
 physics_material_override = SubResource("PhysicsMaterial_mbf4w")
 script = ExtResource("3_usv3y")
 enabled = false
 push_direction = Vector3(0, 0, 1)
 push_distance = 2.0
-push_frequency = 1.5
+push_frequency = 2.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Table/Pusher"]
@@ -102,34 +96,35 @@ physics_material_override = SubResource("PhysicsMaterial_v5i0y")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Table/Colliders/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.86243, 0)
 shape = SubResource("BoxShape3D_gwtrq")
 
 [node name="Left" type="StaticBody3D" parent="Table/Colliders"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.81116, 2.28074, -18.9338)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.82606, 2.28074, -21.6214)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Table/Colliders/Left"]
-transform = Transform3D(0.902585, 0, -0.430511, 0, 1, 0, 0.430511, 0, 0.902585, 0, 1.61852, 0)
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -1.00626, 1.61852, 0.805893)
 shape = SubResource("BoxShape3D_lss3s")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Table/Colliders/Left"]
-transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -1.72429, 0, 5.97509)
+transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -1.72429, 0, 5.99775)
 shape = SubResource("BoxShape3D_skav7")
 
 [node name="Right" type="StaticBody3D" parent="Table/Colliders"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.811, 2.281, -18.934)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.826, 2.281, -21.621)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Table/Colliders/Right"]
-transform = Transform3D(0.902585, 0, 0.430511, 0, 1, 0, -0.430511, 0, 0.902585, 0, 1.61852, 0)
-shape = SubResource("BoxShape3D_ykq4p")
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 1.006, 1.619, 0.806)
+shape = SubResource("BoxShape3D_lss3s")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Table/Colliders/Right"]
-transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 1.724, 0, 5.975)
-shape = SubResource("BoxShape3D_6yukm")
+transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 1.724, 0, 5.998)
+shape = SubResource("BoxShape3D_skav7")
 
 [node name="Back" type="StaticBody3D" parent="Table/Colliders"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.69056, -12.9641)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.69056, -15.4952)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Table/Colliders/Back"]
