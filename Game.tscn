@@ -1,11 +1,17 @@
-[gd_scene load_steps=18 format=3 uid="uid://cw4metkrk77oe"]
+[gd_scene load_steps=21 format=3 uid="uid://cw4metkrk77oe"]
 
 [ext_resource type="PackedScene" uid="uid://dco6gh876g323" path="res://Scenes/Token.tscn" id="1_flwpa"]
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_ppn4k"]
+[ext_resource type="Environment" uid="uid://xf43172ybnbv" path="res://Environment.tres" id="3_e7xe6"]
 [ext_resource type="Script" path="res://Scripts/BoxArea.gd" id="3_ly35t"]
 [ext_resource type="Script" path="res://Scripts/Pusher.gd" id="3_usv3y"]
 [ext_resource type="Material" uid="uid://hu2ca8426jj6" path="res://Materials/TestMat2.tres" id="4_blkp5"]
 [ext_resource type="PackedScene" uid="uid://b2uf3gdkkx4wt" path="res://Scenes/Bounding Wall.tscn" id="5_i7ahu"]
+[ext_resource type="PackedScene" uid="uid://c40s12674ymbj" path="res://Models/CoinPusher/CoinPusher.gltf" id="7_bk6p4"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_nub80"]
+dof_blur_far_distance = 13.09
+dof_blur_amount = 0.02
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ss8l5"]
 size = Vector3(12.9449, 0.0645659, 4.13818)
@@ -41,6 +47,10 @@ size = Vector3(3, 0.5, 12)
 script = ExtResource("1_ppn4k")
 token_scene = ExtResource("1_flwpa")
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("3_e7xe6")
+camera_attributes = SubResource("CameraAttributesPractical_nub80")
+
 [node name="SpawnArea" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.799474, -0.871376)
 shape = SubResource("BoxShape3D_ss8l5")
@@ -50,10 +60,10 @@ script = ExtResource("3_ly35t")
 [node name="Env" type="Node" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="Env"]
-transform = Transform3D(-1, 2.96134e-08, -8.22544e-08, -3.9863e-08, 0.682917, 0.730496, 7.78054e-08, 0.730496, -0.682917, 0, 6.353, -5.121)
+transform = Transform3D(-1, 2.96134e-08, -8.22544e-08, -2.63918e-08, 0.794722, 0.606974, 8.33439e-08, 0.606974, -0.794722, -9.53674e-07, 6.42148, -26.0892)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Env"]
-transform = Transform3D(1, 0, 0, 0, 0.0991287, 0.995075, 0, -0.995075, 0.0991287, -0.00509369, 8.25412, 0.0035336)
+transform = Transform3D(0.599191, 0.796663, -0.079363, -0.481973, 0.438096, 0.758798, 0.639274, -0.416415, 0.646473, -0.00509369, 8.25412, 0.0035336)
 
 [node name="Table" type="Node3D" parent="."]
 
@@ -115,6 +125,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.77436, 0)
 shape = SubResource("WorldBoundaryShape3D_5vig4")
 
 [node name="Tokens" type="Node" parent="."]
+
+[node name="CoinPusher" parent="." instance=ExtResource("7_bk6p4")]
 
 [connection signal="body_entered" from="BottomHitbox" to="." method="_on_body_fell"]
 
