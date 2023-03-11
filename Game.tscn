@@ -10,7 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://c40s12674ymbj" path="res://Models/CoinPusher/CoinPusher.gltf" id="7_bk6p4"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_nub80"]
-dof_blur_far_distance = 13.09
+auto_exposure_enabled = true
+auto_exposure_scale = 0.08
+auto_exposure_speed = 4.34
+dof_blur_far_distance = 244.52
 dof_blur_amount = 0.02
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ss8l5"]
@@ -50,26 +53,29 @@ plane = Plane(0, -1, 0, 0)
 script = ExtResource("1_ppn4k")
 token_scene = ExtResource("1_flwpa")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="Env" type="Node" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Env"]
 environment = ExtResource("3_e7xe6")
 camera_attributes = SubResource("CameraAttributesPractical_nub80")
-
-[node name="SpawnArea" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.799474, -19.8204)
-shape = SubResource("BoxShape3D_ss8l5")
-disabled = true
-script = ExtResource("3_ly35t")
-
-[node name="Env" type="Node" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="Env"]
 transform = Transform3D(-1, 2.96134e-08, -8.22543e-08, -4.92284e-08, 0.586782, 0.809745, 7.22447e-08, 0.809745, -0.586782, -9.53674e-07, 5.43284, -22.9952)
 fov = 80.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Env"]
-transform = Transform3D(0.616086, 0.785814, 0.0541755, 0.0837063, -0.133705, 0.98748, 0.783218, -0.603838, -0.148152, -0.00509369, 8.25412, 0.0035336)
+transform = Transform3D(0.614276, 0.714692, 0.334484, -0.0960912, -0.35298, 0.930684, 0.783218, -0.603838, -0.148151, -0.00509369, 8.25412, 0.0035336)
+light_energy = 2.051
 shadow_enabled = true
 shadow_opacity = 0.83
+directional_shadow_mode = 1
+directional_shadow_split_1 = 0.115
+
+[node name="SpawnArea" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.799474, -19.8204)
+shape = SubResource("BoxShape3D_ss8l5")
+disabled = true
+script = ExtResource("3_ly35t")
 
 [node name="Table" type="Node3D" parent="."]
 
