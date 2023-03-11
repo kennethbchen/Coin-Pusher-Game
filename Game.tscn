@@ -66,7 +66,8 @@ transform = Transform3D(-1, 2.96134e-08, -8.22543e-08, -4.92284e-08, 0.586782, 0
 fov = 80.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Env"]
-transform = Transform3D(0.599191, 0.796663, -0.079363, -0.481973, 0.438096, 0.758798, 0.639274, -0.416415, 0.646473, -0.00509369, 8.25412, 0.0035336)
+transform = Transform3D(0.616086, 0.785814, 0.0541755, 0.0837063, -0.133705, 0.98748, 0.783218, -0.603838, -0.148152, -0.00509369, 8.25412, 0.0035336)
+shadow_enabled = true
 
 [node name="Table" type="Node3D" parent="."]
 
