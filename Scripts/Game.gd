@@ -2,10 +2,17 @@ extends Node3D
 
 @export var token_scene: PackedScene
 
+# Workaround until you can add Nodes to an array directly through the editor
+@export var drop_points_parent: Node
+var drop_points: Array[Node] = []
+
 @onready var camera = $Env/Camera3D
 @onready var token_parent = $Tokens
+
 var cast_from = null
 var cast_to = null
+
+
 
 # --- Temp Stuff ----
 @onready var spawn_area: = $SpawnArea as BoxArea
@@ -13,11 +20,12 @@ var cast_to = null
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
+	for child in drop_points_parent.get_children():
+		drop_points.append(child)
 	
 	for i in range(0, 60):
 		var token = _create_token()
 		token.position = spawn_area.get_random_point()
-		
 
 func _unhandled_input(event):
 	
@@ -25,6 +33,33 @@ func _unhandled_input(event):
 	if event.is_action_pressed("game_action"):
 		cast_from = camera.project_ray_origin(event.position)
 		cast_to = cast_from + camera.project_ray_normal(event.position) * 50
+	
+	# Is there a better way to do this?
+	if event.is_action_pressed("game_drop_1"):
+		drop_token(0)
+		
+	if event.is_action_pressed("game_drop_2"):
+		drop_token(1)
+		
+	if event.is_action_pressed("game_drop_3"):
+		drop_token(2)
+		
+	if event.is_action_pressed("game_drop_4"):
+		drop_token(3)
+		
+	if event.is_action_pressed("game_drop_5"):
+		drop_token(4)
+		
+	if event.is_action_pressed("game_drop_6"):
+		drop_token(5)
+
+func drop_token(index: int) -> void: 
+	
+	var ind = clamp(index, 0, drop_points.size() - 1)
+	
+	var token = _create_token()
+	token.position = drop_points[ind].position
+	token.rotation.x = 90
 
 func _physics_process(delta):
 	
