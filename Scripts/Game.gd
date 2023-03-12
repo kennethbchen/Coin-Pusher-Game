@@ -23,7 +23,7 @@ func _ready():
 	for child in drop_points_parent.get_children():
 		drop_points.append(child)
 	
-	for i in range(0, 60):
+	for i in range(0, 100):
 		var token = _create_token()
 		token.position = spawn_area.get_random_point()
 
