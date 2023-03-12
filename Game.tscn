@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cw4metkrk77oe"]
+[gd_scene load_steps=23 format=3 uid="uid://cw4metkrk77oe"]
 
 [ext_resource type="PackedScene" uid="uid://dco6gh876g323" path="res://Scenes/Token.tscn" id="1_flwpa"]
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_ppn4k"]
@@ -34,14 +34,23 @@ size = Vector3(15, 5.90867, 10)
 [sub_resource type="BoxShape3D" id="BoxShape3D_lss3s"]
 size = Vector3(1.09942, 10.7226, 5.57271)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_4arkb"]
+size = Vector3(1.09942, 14.8944, 5.38143)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_skav7"]
-size = Vector3(1.09942, 13.8097, 5.25509)
+size = Vector3(1.09942, 14.8944, 3.27607)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1on3f"]
+size = Vector3(1.099, 14.894, 5.381)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_egkv5"]
 plane = Plane(0, 0, -1, 0)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_uxs7o"]
 plane = Plane(0, -1, 0, 0)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_yurye"]
+plane = Plane(0, 0, 1, 0)
 
 [node name="Game" type="Node3D"]
 script = ExtResource("1_ppn4k")
@@ -54,7 +63,7 @@ environment = ExtResource("3_e7xe6")
 camera_attributes = SubResource("CameraAttributesPractical_nub80")
 
 [node name="Camera3D" type="Camera3D" parent="Env"]
-transform = Transform3D(-1, 2.96134e-08, -8.22543e-08, -4.92284e-08, 0.586782, 0.809745, 7.22447e-08, 0.809745, -0.586782, -9.53674e-07, 5.43284, -18.0802)
+transform = Transform3D(-1, 2.96134e-08, -8.22543e-08, -4.26939e-08, 0.655624, 0.755088, 7.62887e-08, 0.755088, -0.655624, -9.53674e-07, 5.76602, -20.6304)
 fov = 80.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Env"]
@@ -65,7 +74,7 @@ directional_shadow_mode = 1
 directional_shadow_split_1 = 0.115
 
 [node name="BottomHitbox" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.29, -13.9999)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0151072, -3.12827, -14.0512)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BottomHitbox"]
 shape = SubResource("WorldBoundaryShape3D_5vig4")
@@ -87,8 +96,8 @@ material_override = ExtResource("6_iueic")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.156359, -10.3774)
 script = ExtResource("3_usv3y")
 push_direction = Vector3(0, 0, 1)
-push_distance = 2.0
-push_frequency = 2.5
+push_distance = 2.1
+push_frequency = 2.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Table/Pusher"]
@@ -107,7 +116,7 @@ physics_material_override = SubResource("PhysicsMaterial_v5i0y")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Table/Colliders/Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.82515, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.82515, -0.0868731)
 shape = SubResource("BoxShape3D_gwtrq")
 
 [node name="Left" type="StaticBody3D" parent="Table/Colliders"]
@@ -115,11 +124,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.82606, 2.28074, -8.91619)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Table/Colliders/Left"]
-transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -1.00626, 1.61852, 0.805893)
+transform = Transform3D(0.98281, 0, -0.18462, 0, 1, 0, 0.18462, 0, 0.98281, -1.26873, 1.4633, 0.805893)
 shape = SubResource("BoxShape3D_lss3s")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Table/Colliders/Left"]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -1.72429, 0, 5.99775)
+shape = SubResource("BoxShape3D_4arkb")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Table/Colliders/Left"]
+transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -0.577139, -0.750583, -1.70707)
 shape = SubResource("BoxShape3D_skav7")
 
 [node name="Right" type="StaticBody3D" parent="Table/Colliders"]
@@ -127,11 +140,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.826, 2.281, -8.91579)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Table/Colliders/Right"]
-transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 1.006, 1.619, 0.806)
+transform = Transform3D(0.982935, 0, 0.183951, 0, 1, 0, -0.183951, 0, 0.982935, 1.269, 1.463, 0.806)
 shape = SubResource("BoxShape3D_lss3s")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Table/Colliders/Right"]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 1.724, 0, 5.998)
+shape = SubResource("BoxShape3D_1on3f")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Table/Colliders/Right"]
+transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0.577, -0.751, -1.707)
 shape = SubResource("BoxShape3D_skav7")
 
 [node name="Back" type="StaticBody3D" parent="Table/Colliders"]
@@ -147,6 +164,13 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Table/Colliders/Roof"]
 shape = SubResource("WorldBoundaryShape3D_uxs7o")
+
+[node name="Front" type="StaticBody3D" parent="Table/Colliders"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.4476)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Table/Colliders/Front"]
+shape = SubResource("WorldBoundaryShape3D_yurye")
 
 [node name="Tokens" type="Node" parent="."]
 
