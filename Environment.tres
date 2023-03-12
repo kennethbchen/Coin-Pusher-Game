@@ -25,4 +25,3 @@ ssao_enabled = true
 ssao_radius = 0.26
 ssao_intensity = 3.16
 ssil_enabled = true
-adjustment_brightness = 0.63

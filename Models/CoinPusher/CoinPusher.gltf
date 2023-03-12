@@ -37,67 +37,67 @@
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 456,
+            "count" : 2473,
             "max" : [
-                25.547374725341797,
-                1.4140355587005615,
-                22.64391326904297
+                19.46959114074707,
+                10.900035858154297,
+                17.3907527923584
             ],
             "min" : [
-                -25.547374725341797,
+                -19.46959114074707,
                 -6.033237934112549,
-                -22.64391326904297
+                -17.3907527923584
             ],
             "type" : "VEC3"
         },
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 456,
+            "count" : 2473,
             "type" : "VEC2"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 456,
+            "count" : 2473,
             "type" : "VEC3"
         },
         {
             "bufferView" : 3,
             "componentType" : 5123,
-            "count" : 720,
+            "count" : 3816,
             "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 5472,
+            "byteLength" : 29676,
             "byteOffset" : 0,
             "target" : 34962
         },
         {
             "buffer" : 0,
-            "byteLength" : 3648,
-            "byteOffset" : 5472,
+            "byteLength" : 19784,
+            "byteOffset" : 29676,
             "target" : 34962
         },
         {
             "buffer" : 0,
-            "byteLength" : 5472,
-            "byteOffset" : 9120,
+            "byteLength" : 29676,
+            "byteOffset" : 49460,
             "target" : 34962
         },
         {
             "buffer" : 0,
-            "byteLength" : 1440,
-            "byteOffset" : 14592,
+            "byteLength" : 7632,
+            "byteOffset" : 79136,
             "target" : 34963
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 16032,
+            "byteLength" : 86768,
             "uri" : "CoinPusher.bin"
         }
     ]
