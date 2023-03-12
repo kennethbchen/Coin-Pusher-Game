@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://c40s12674ymbj" path="res://Models/CoinPusher/CoinPusher.gltf" id="7_bk6p4"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_nub80"]
-auto_exposure_enabled = true
 auto_exposure_scale = 0.08
 auto_exposure_speed = 4.34
 dof_blur_far_distance = 244.52
@@ -65,7 +64,6 @@ fov = 80.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Env"]
 transform = Transform3D(0.614276, 0.714692, 0.334484, -0.0960912, -0.35298, 0.930684, 0.783218, -0.603838, -0.148151, -0.00509369, 8.25412, 0.0035336)
-light_energy = 2.051
 shadow_enabled = true
 shadow_opacity = 0.83
 directional_shadow_mode = 1
