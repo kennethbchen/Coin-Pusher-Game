@@ -90,6 +90,7 @@ func _get_num_colliders():
 	return count
 	
 func destroy():
+	linear_damp = 10
 	mesh.scale = Vector3(1,1,1)
 	var tween = get_tree().create_tween()
 	tween.set_ease(Tween.EASE_IN)
