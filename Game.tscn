@@ -56,6 +56,11 @@ plane = Plane(0, 0, 1, 0)
 script = ExtResource("1_ppn4k")
 token_scene = ExtResource("1_flwpa")
 
+[node name="SpawnPoints" type="Node3D" parent="."]
+
+[node name="Marker3D" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.25351, 1.82104, -10.9418)
+
 [node name="Env" type="Node" parent="."]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Env"]
@@ -80,7 +85,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0151072, -3.12827, -14.051
 shape = SubResource("WorldBoundaryShape3D_5vig4")
 
 [node name="SpawnArea" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.799474, -15.1753)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11078, -13.4664)
 shape = SubResource("BoxShape3D_ss8l5")
 disabled = true
 script = ExtResource("3_ly35t")
@@ -93,9 +98,9 @@ script = ExtResource("3_ly35t")
 material_override = ExtResource("6_iueic")
 
 [node name="Pusher" type="AnimatableBody3D" parent="Table"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.156359, -10.3774)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.156, -8.277)
 script = ExtResource("3_usv3y")
-push_direction = Vector3(0, 0, 1)
+push_direction = Vector3(0, 0, -1)
 push_distance = 2.1
 push_frequency = 2.0
 metadata/_edit_group_ = true
@@ -106,6 +111,14 @@ mesh = SubResource("BoxMesh_7ucsw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Table/Pusher"]
 shape = SubResource("BoxShape3D_lwvvu")
+
+[node name="HintOffset" type="Marker3D" parent="Table/Pusher"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.50326)
+gizmo_extents = 0.0
+
+[node name="PushHint" type="Marker3D" parent="Table/Pusher/HintOffset"]
+transform = Transform3D(2.169, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0, -2.1)
+gizmo_extents = 2.3
 
 [node name="Colliders" type="Node3D" parent="Table"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.43038)
@@ -156,10 +169,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.69056, -2.62202)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Table/Colliders/Back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.29095, 0)
 shape = SubResource("WorldBoundaryShape3D_egkv5")
 
 [node name="Roof" type="StaticBody3D" parent="Table/Colliders"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.415768, 9.09039, -3.30989)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.09, -3.31)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Table/Colliders/Roof"]
