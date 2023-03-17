@@ -81,7 +81,7 @@ disabled = true
 script = ExtResource("3_ly35t")
 
 [node name="DropPoints" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.491553, -10.3934)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.491553, -9.38738)
 
 [node name="1" type="Marker3D" parent="DropPoints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.75656, 1.82104, 0)
@@ -182,7 +182,7 @@ transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0.577, -0.751, 
 shape = SubResource("BoxShape3D_skav7")
 
 [node name="Back" type="StaticBody3D" parent="Table/Colliders"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.69056, -2.62202)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.69056, -1.68145)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Table/Colliders/Back"]
