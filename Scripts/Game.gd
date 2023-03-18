@@ -58,7 +58,7 @@ func drop_token(index: int, jitter:= false) -> void:
 	var ind = clamp(index, 0, drop_points.size() - 1)
 	
 	var token = _create_token() as Token
-	token.position = drop_points[ind].position
+	token.position = drop_points[ind].global_position
 	token.rotation.x = 90
 	
 	if jitter:

@@ -14,6 +14,8 @@ extends RigidBody3D
 @export_range(1, 8) var num_box_colliders = 4
 @export_range(0.001, 10, 0.001, "or_greater") var height: float = 0.15
 @export_range(0.001, 10, 0.001, "or_greater") var radius: float = 0.5
+
+@export var jitter_influence:= Vector3.ONE
 @export_range(0.0, 10.0, 0.001) var max_jitter = 1.0
 
 var cylinder_mesh: CylinderMesh
@@ -29,7 +31,7 @@ func _ready():
 	cylinder_mesh.bottom_radius = radius
 	cylinder_mesh.height = height
 	
-	linear_velocity.y = -2
+	linear_velocity.y = -5
 	if not Engine.is_editor_hint():
 		mesh.scale = Vector3.ZERO
 		var tween = get_tree().create_tween()
@@ -91,7 +93,9 @@ func _get_num_colliders():
 	return count
 
 func jitter():
-	linear_velocity += Vector3(randf_range(-max_jitter, max_jitter), randf_range(-max_jitter, max_jitter), randf_range(-max_jitter, max_jitter))
+	var vector = Vector3(randf_range(-max_jitter, max_jitter), randf_range(-max_jitter, max_jitter), randf_range(-max_jitter, max_jitter))
+	linear_velocity += vector * jitter_influence
+	
 
 func destroy():
 	linear_damp = 10
