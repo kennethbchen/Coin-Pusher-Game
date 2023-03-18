@@ -36,30 +36,34 @@ func _unhandled_input(event):
 	
 	# Is there a better way to do this?
 	if event.is_action_pressed("game_drop_1"):
-		drop_token(0)
+		drop_token(0, true)
 		
 	if event.is_action_pressed("game_drop_2"):
-		drop_token(1)
+		drop_token(1, true)
 		
 	if event.is_action_pressed("game_drop_3"):
-		drop_token(2)
+		drop_token(2, true)
 		
 	if event.is_action_pressed("game_drop_4"):
-		drop_token(3)
+		drop_token(3, true)
 		
 	if event.is_action_pressed("game_drop_5"):
-		drop_token(4)
+		drop_token(4, true)
 		
 	if event.is_action_pressed("game_drop_6"):
-		drop_token(5)
+		drop_token(5, true)
 
-func drop_token(index: int) -> void: 
+func drop_token(index: int, jitter:= false) -> void: 
 	
 	var ind = clamp(index, 0, drop_points.size() - 1)
 	
-	var token = _create_token()
+	var token = _create_token() as Token
 	token.position = drop_points[ind].position
 	token.rotation.x = 90
+	
+	if jitter:
+		
+		token.jitter()
 
 func _physics_process(delta):
 	

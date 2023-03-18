@@ -81,7 +81,7 @@ disabled = true
 script = ExtResource("3_ly35t")
 
 [node name="DropPoints" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.491553, -9.38738)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.491553, -9.48155)
 
 [node name="1" type="Marker3D" parent="DropPoints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.75656, 1.82104, 0)

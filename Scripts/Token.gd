@@ -14,6 +14,7 @@ extends RigidBody3D
 @export_range(1, 8) var num_box_colliders = 4
 @export_range(0.001, 10, 0.001, "or_greater") var height: float = 0.15
 @export_range(0.001, 10, 0.001, "or_greater") var radius: float = 0.5
+@export_range(0.0, 10.0, 0.001) var max_jitter = 1.0
 
 var cylinder_mesh: CylinderMesh
 
@@ -88,7 +89,10 @@ func _get_num_colliders():
 			count += 1
 			
 	return count
-	
+
+func jitter():
+	linear_velocity += Vector3(randf_range(-max_jitter, max_jitter), randf_range(-max_jitter, max_jitter), randf_range(-max_jitter, max_jitter))
+
 func destroy():
 	linear_damp = 10
 	mesh.scale = Vector3(1,1,1)
