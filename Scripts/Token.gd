@@ -29,13 +29,13 @@ func _ready():
 	cylinder_mesh.bottom_radius = radius
 	cylinder_mesh.height = height
 	
-	linear_velocity.y = -5
+	linear_velocity.y = -2
 	if not Engine.is_editor_hint():
 		mesh.scale = Vector3.ZERO
 		var tween = get_tree().create_tween()
 		tween.set_ease(Tween.EASE_OUT)
 		tween.set_trans(Tween.TRANS_BACK)
-		tween.tween_property(mesh, "scale", Vector3(1,1,1), 0.25)
+		tween.tween_property(mesh, "scale", Vector3(1,1,1), 0.5)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
