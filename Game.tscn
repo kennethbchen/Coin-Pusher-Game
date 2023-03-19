@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cw4metkrk77oe"]
+[gd_scene load_steps=25 format=3 uid="uid://cw4metkrk77oe"]
 
 [ext_resource type="PackedScene" uid="uid://dco6gh876g323" path="res://Scenes/Token.tscn" id="1_flwpa"]
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_ppn4k"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" path="res://Scripts/BoxArea.gd" id="3_ly35t"]
 [ext_resource type="Script" path="res://Scripts/Pusher.gd" id="3_usv3y"]
 [ext_resource type="Material" uid="uid://hu2ca8426jj6" path="res://Materials/TestMat2.tres" id="4_blkp5"]
-[ext_resource type="Material" uid="uid://knf57an1tcox" path="res://Materials/TestMat3.tres" id="6_iueic"]
 [ext_resource type="PackedScene" uid="uid://c40s12674ymbj" path="res://Models/CoinPusher/CoinPusher.gltf" id="7_bk6p4"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_nub80"]
@@ -120,120 +119,115 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0151072, -3.12827, -14.051
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BottomHitbox"]
 shape = SubResource("WorldBoundaryShape3D_5vig4")
 
-[node name="Table" type="Node3D" parent="."]
+[node name="CoinPusher" type="Node3D" parent="."]
 
-[node name="Machine" parent="Table" instance=ExtResource("7_bk6p4")]
+[node name="Model" parent="CoinPusher" instance=ExtResource("7_bk6p4")]
 
-[node name="Machine" parent="Table/Machine" index="0"]
-material_override = ExtResource("6_iueic")
-
-[node name="Pusher" type="AnimatableBody3D" parent="Table"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.156, -8.277)
+[node name="Pusher" type="AnimatableBody3D" parent="CoinPusher"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.156, -8.177)
 script = ExtResource("3_usv3y")
 push_direction = Vector3(0, 0, -1)
-push_distance = 2.1
+push_distance = 2.2
 push_frequency = 2.0
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Table/Pusher"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CoinPusher/Pusher"]
 material_override = ExtResource("4_blkp5")
 mesh = SubResource("BoxMesh_7ucsw")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Table/Pusher"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CoinPusher/Pusher"]
 shape = SubResource("BoxShape3D_lwvvu")
 
-[node name="HintOffset" type="Marker3D" parent="Table/Pusher"]
+[node name="HintOffset" type="Marker3D" parent="CoinPusher/Pusher"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.50326)
 gizmo_extents = 0.0
 
-[node name="PushHint" type="Marker3D" parent="Table/Pusher/HintOffset"]
-transform = Transform3D(2.169, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0, -2.1)
+[node name="PushHint" type="Marker3D" parent="CoinPusher/Pusher/HintOffset"]
+transform = Transform3D(2.169, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0, -2.2)
 gizmo_extents = 2.3
 
-[node name="Colliders" type="Node3D" parent="Table"]
+[node name="Colliders" type="Node3D" parent="CoinPusher"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.43038)
 
-[node name="Floor" type="StaticBody3D" parent="Table/Colliders"]
+[node name="Floor" type="StaticBody3D" parent="CoinPusher/Colliders"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.125178, -4.88559)
 physics_material_override = SubResource("PhysicsMaterial_v5i0y")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Table/Colliders/Floor"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CoinPusher/Colliders/Floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.82515, -0.0868731)
 shape = SubResource("BoxShape3D_gwtrq")
 
-[node name="Left" type="StaticBody3D" parent="Table/Colliders"]
+[node name="Left" type="StaticBody3D" parent="CoinPusher/Colliders"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.82606, 2.28074, -8.91619)
 metadata/_edit_group_ = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Table/Colliders/Left"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CoinPusher/Colliders/Left"]
 transform = Transform3D(0.98281, 0, -0.18462, 0, 1, 0, 0.18462, 0, 0.98281, -1.26873, 1.4633, 0.805893)
 shape = SubResource("BoxShape3D_lss3s")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Table/Colliders/Left"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="CoinPusher/Colliders/Left"]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -1.72429, 0, 5.99775)
 shape = SubResource("BoxShape3D_4arkb")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Table/Colliders/Left"]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="CoinPusher/Colliders/Left"]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -0.577139, -0.750583, -1.70707)
 shape = SubResource("BoxShape3D_skav7")
 
-[node name="Right" type="StaticBody3D" parent="Table/Colliders"]
+[node name="Right" type="StaticBody3D" parent="CoinPusher/Colliders"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.826, 2.281, -8.91579)
 metadata/_edit_group_ = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Table/Colliders/Right"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CoinPusher/Colliders/Right"]
 transform = Transform3D(0.982935, 0, 0.183951, 0, 1, 0, -0.183951, 0, 0.982935, 1.269, 1.463, 0.806)
 shape = SubResource("BoxShape3D_lss3s")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Table/Colliders/Right"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="CoinPusher/Colliders/Right"]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 1.724, 0, 5.998)
 shape = SubResource("BoxShape3D_1on3f")
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="Table/Colliders/Right"]
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="CoinPusher/Colliders/Right"]
 transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0.577, -0.751, -1.707)
 shape = SubResource("BoxShape3D_skav7")
 
-[node name="Back" type="StaticBody3D" parent="Table/Colliders"]
+[node name="Back" type="StaticBody3D" parent="CoinPusher/Colliders"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.69056, -1.68145)
 physics_material_override = SubResource("PhysicsMaterial_a44px")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Table/Colliders/Back"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CoinPusher/Colliders/Back"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.29095, 0)
 shape = SubResource("WorldBoundaryShape3D_egkv5")
 
-[node name="Roof" type="StaticBody3D" parent="Table/Colliders"]
+[node name="Roof" type="StaticBody3D" parent="CoinPusher/Colliders"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.09, -3.31)
 metadata/_edit_group_ = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Table/Colliders/Roof"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CoinPusher/Colliders/Roof"]
 shape = SubResource("WorldBoundaryShape3D_uxs7o")
 
-[node name="Front" type="StaticBody3D" parent="Table/Colliders"]
+[node name="Front" type="StaticBody3D" parent="CoinPusher/Colliders"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.4476)
 metadata/_edit_group_ = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Table/Colliders/Front"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CoinPusher/Colliders/Front"]
 shape = SubResource("WorldBoundaryShape3D_yurye")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Table/Colliders"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.08985, -1.79476)
+[node name="Funnel" type="StaticBody3D" parent="CoinPusher/Colliders"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.14557, -1.79476)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Table/Colliders/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CoinPusher/Colliders/Funnel"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.348402, -0.201582)
 shape = SubResource("BoxShape3D_kfr5c")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Table/Colliders/StaticBody3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="CoinPusher/Colliders/Funnel"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53, 0.348, -0.0582771)
 shape = SubResource("BoxShape3D_20pyj")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Table/Colliders/StaticBody3D"]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="CoinPusher/Colliders/Funnel"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.53, 0.348, -0.058)
 shape = SubResource("BoxShape3D_20pyj")
 
 [node name="Tokens" type="Node" parent="."]
 
 [connection signal="body_entered" from="BottomHitbox" to="." method="_on_body_fell"]
-
-[editable path="Table/Machine"]

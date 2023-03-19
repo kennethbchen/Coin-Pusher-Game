@@ -18,6 +18,19 @@
             "name" : "Machine"
         }
     ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "name" : "Pusher",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0
+                },
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.5
+            }
+        }
+    ],
     "meshes" : [
         {
             "name" : "Circle.001",
@@ -28,19 +41,33 @@
                         "TEXCOORD_0" : 1,
                         "NORMAL" : 2
                     },
-                    "indices" : 3
+                    "indices" : 3,
+                    "material" : 0
                 }
             ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/png",
+            "name" : "CoinPusher",
+            "uri" : "CoinPusher.png"
         }
     ],
     "accessors" : [
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 4499,
+            "count" : 4229,
             "max" : [
                 22.105819702148438,
-                17.74287223815918,
+                17.742862701416016,
                 19.779253005981445
             ],
             "min" : [
@@ -53,51 +80,57 @@
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 4499,
+            "count" : 4229,
             "type" : "VEC2"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 4499,
+            "count" : 4229,
             "type" : "VEC3"
         },
         {
             "bufferView" : 3,
             "componentType" : 5123,
-            "count" : 6912,
+            "count" : 6408,
             "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 53988,
+            "byteLength" : 50748,
             "byteOffset" : 0,
             "target" : 34962
         },
         {
             "buffer" : 0,
-            "byteLength" : 35992,
-            "byteOffset" : 53988,
+            "byteLength" : 33832,
+            "byteOffset" : 50748,
             "target" : 34962
         },
         {
             "buffer" : 0,
-            "byteLength" : 53988,
-            "byteOffset" : 89980,
+            "byteLength" : 50748,
+            "byteOffset" : 84580,
             "target" : 34962
         },
         {
             "buffer" : 0,
-            "byteLength" : 13824,
-            "byteOffset" : 143968,
+            "byteLength" : 12816,
+            "byteOffset" : 135328,
             "target" : 34963
+        }
+    ],
+    "samplers" : [
+        {
+            "magFilter" : 9728,
+            "minFilter" : 9984
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 157792,
+            "byteLength" : 148144,
             "uri" : "CoinPusher.bin"
         }
     ]
