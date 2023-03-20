@@ -121,7 +121,7 @@ shape = SubResource("WorldBoundaryShape3D_5vig4")
 
 [node name="CoinPusher" type="Node3D" parent="."]
 
-[node name="Model" parent="CoinPusher" instance=ExtResource("7_bk6p4")]
+[node name="CoinPusher" parent="CoinPusher" instance=ExtResource("7_bk6p4")]
 
 [node name="Pusher" type="AnimatableBody3D" parent="CoinPusher"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.156, -8.177)

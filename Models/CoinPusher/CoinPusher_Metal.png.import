@@ -2,26 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://co5d547ei1f65"
-path="res://.godot/imported/CoinPusher.png-b94acbd92e3e5a3f86497b802263e554.ctex"
+uid="uid://pjkmddp3g7ko"
+path="res://.godot/imported/CoinPusher_Metal.png-d9f94bdfb988ded7655484dcb1e1cfd2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Models/CoinPusher/CoinPusher.png"
-dest_files=["res://.godot/imported/CoinPusher.png-b94acbd92e3e5a3f86497b802263e554.ctex"]
+source_file="res://Models/CoinPusher/CoinPusher_Metal.png"
+dest_files=["res://.godot/imported/CoinPusher_Metal.png-d9f94bdfb988ded7655484dcb1e1cfd2.ctex"]
 
 [params]
 
 compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
-compress/hdr_compression=0
+compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

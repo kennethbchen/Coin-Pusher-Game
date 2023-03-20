@@ -26,14 +26,16 @@
                 "baseColorTexture" : {
                     "index" : 0
                 },
-                "metallicFactor" : 0,
-                "roughnessFactor" : 0.5
+                "metallicRoughnessTexture" : {
+                    "index" : 1
+                },
+                "roughnessFactor" : 0.4636363685131073
             }
         }
     ],
     "meshes" : [
         {
-            "name" : "Circle.001",
+            "name" : "Circle.009",
             "primitives" : [
                 {
                     "attributes" : {
@@ -51,6 +53,10 @@
         {
             "sampler" : 0,
             "source" : 0
+        },
+        {
+            "sampler" : 0,
+            "source" : 1
         }
     ],
     "images" : [
@@ -58,6 +64,11 @@
             "mimeType" : "image/png",
             "name" : "CoinPusher",
             "uri" : "CoinPusher.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "CoinPusher_Metal",
+            "uri" : "CoinPusher_Metal.png"
         }
     ],
     "accessors" : [
