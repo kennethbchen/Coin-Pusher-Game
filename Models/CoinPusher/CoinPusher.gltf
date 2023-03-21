@@ -3,6 +3,10 @@
         "generator" : "Khronos glTF Blender I/O v3.4.50",
         "version" : "2.0"
     },
+    "extensionsUsed" : [
+        "KHR_materials_specular",
+        "KHR_materials_ior"
+    ],
     "scene" : 0,
     "scenes" : [
         {
@@ -21,6 +25,18 @@
     "materials" : [
         {
             "doubleSided" : true,
+            "extensions" : {
+                "KHR_materials_specular" : {
+                    "specularColorFactor" : [
+                        0.39881927884417656,
+                        0.39881927884417656,
+                        0.39881927884417656
+                    ]
+                },
+                "KHR_materials_ior" : {
+                    "ior" : 1.4500000476837158
+                }
+            },
             "name" : "Pusher",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
@@ -29,7 +45,7 @@
                 "metallicRoughnessTexture" : {
                     "index" : 1
                 },
-                "roughnessFactor" : 0.4636363685131073
+                "roughnessFactor" : 0.586363673210144
             }
         }
     ],
@@ -75,7 +91,7 @@
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 4229,
+            "count" : 4221,
             "max" : [
                 22.105819702148438,
                 17.742862701416016,
@@ -91,13 +107,13 @@
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 4229,
+            "count" : 4221,
             "type" : "VEC2"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 4229,
+            "count" : 4221,
             "type" : "VEC3"
         },
         {
@@ -110,26 +126,26 @@
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 50748,
+            "byteLength" : 50652,
             "byteOffset" : 0,
             "target" : 34962
         },
         {
             "buffer" : 0,
-            "byteLength" : 33832,
-            "byteOffset" : 50748,
+            "byteLength" : 33768,
+            "byteOffset" : 50652,
             "target" : 34962
         },
         {
             "buffer" : 0,
-            "byteLength" : 50748,
-            "byteOffset" : 84580,
+            "byteLength" : 50652,
+            "byteOffset" : 84420,
             "target" : 34962
         },
         {
             "buffer" : 0,
             "byteLength" : 12816,
-            "byteOffset" : 135328,
+            "byteOffset" : 135072,
             "target" : 34963
         }
     ],
@@ -141,7 +157,7 @@
     ],
     "buffers" : [
         {
-            "byteLength" : 148144,
+            "byteLength" : 147888,
             "uri" : "CoinPusher.bin"
         }
     ]
