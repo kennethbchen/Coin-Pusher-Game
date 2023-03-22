@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bu1gmy4whlgd6"]
 
 [ext_resource type="Script" path="res://Scripts/Token.gd" id="1_y4slo"]
-[ext_resource type="Material" path="res://Materials/Token/Token.tres" id="2_fj87l"]
+[ext_resource type="Material" uid="uid://bpgkjsgbf81vu" path="res://Materials/Token/Token.tres" id="2_fj87l"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_11f54"]
 lightmap_size_hint = Vector2i(17, 9)
