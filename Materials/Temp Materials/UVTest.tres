@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3]
+
+[ext_resource type="Texture2D" uid="uid://cc3gdrxxyyubt" path="res://Materials/Temp Materials/PixelTextureGrid_64.png" id="1_q41ht"]
+
+[resource]
+albedo_texture = ExtResource("1_q41ht")
+metallic_specular = 0.58
+texture_filter = 0

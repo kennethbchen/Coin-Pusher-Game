@@ -1,12 +1,12 @@
-[gd_scene load_steps=25 format=3 uid="uid://cw4metkrk77oe"]
+[gd_scene load_steps=25 format=3 uid="uid://kwogiuyetkbq"]
 
-[ext_resource type="PackedScene" uid="uid://dco6gh876g323" path="res://Scenes/Token.tscn" id="1_flwpa"]
+[ext_resource type="PackedScene" uid="uid://bu1gmy4whlgd6" path="res://Scenes/Token.tscn" id="1_flwpa"]
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_ppn4k"]
 [ext_resource type="Environment" uid="uid://xf43172ybnbv" path="res://Environment.tres" id="3_e7xe6"]
 [ext_resource type="Script" path="res://Scripts/BoxArea.gd" id="3_ly35t"]
 [ext_resource type="Script" path="res://Scripts/Pusher.gd" id="3_usv3y"]
-[ext_resource type="Material" uid="uid://hu2ca8426jj6" path="res://Materials/TestMat2.tres" id="4_blkp5"]
 [ext_resource type="PackedScene" uid="uid://c40s12674ymbj" path="res://Models/CoinPusher/CoinPusher.gltf" id="7_bk6p4"]
+[ext_resource type="Material" uid="uid://hu2ca8426jj6" path="res://Materials/Temp Materials/TestMat2.tres" id="7_mhhgh"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_nub80"]
 auto_exposure_scale = 0.08
@@ -82,9 +82,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53674e-07, 6.82908, -20.59
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Env"]
 transform = Transform3D(0.620826, 0.772497, 0.133504, -0.0962668, -0.0938855, 0.990918, 0.778016, -0.628039, 0.0160793, -0.00509369, 8.25412, 0.0035336)
 shadow_enabled = true
-shadow_opacity = 0.83
-directional_shadow_mode = 1
-directional_shadow_split_1 = 0.115
+shadow_blur = 0.142
 
 [node name="SpawnArea" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11078, -13.4754)
@@ -132,7 +130,7 @@ push_frequency = 2.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CoinPusher/Pusher"]
-material_override = ExtResource("4_blkp5")
+material_override = ExtResource("7_mhhgh")
 mesh = SubResource("BoxMesh_7ucsw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CoinPusher/Pusher"]
