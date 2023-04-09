@@ -20,6 +20,8 @@ extends RigidBody3D
 
 var cylinder_mesh: CylinderMesh
 
+signal collision(linear_velocity)
+
 func _ready():
 	assert(mesh.mesh is CylinderMesh)
 	
@@ -105,3 +107,9 @@ func destroy():
 	tween.set_trans(Tween.TRANS_BACK)
 	tween.tween_property(mesh, "scale", Vector3.ZERO, 0.4)
 	tween.tween_callback(queue_free)
+
+
+func _on_body_entered(body: Node):
+	
+	Events.token_collision.emit(position, linear_velocity, body)
+		

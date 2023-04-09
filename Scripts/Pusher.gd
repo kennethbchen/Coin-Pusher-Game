@@ -1,5 +1,7 @@
 @tool
 
+class_name Pusher
+
 extends AnimatableBody3D
 
 @export var enabled: = true

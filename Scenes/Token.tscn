@@ -10,21 +10,22 @@ height = 0.15
 radial_segments = 16
 rings = 2
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_1eufo"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_881qd"]
 size = Vector3(0.707107, 0.15, 0.707107)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_a33px"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_fphaf"]
 size = Vector3(0.707107, 0.15, 0.707107)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_esr2k"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_bkopf"]
 size = Vector3(0.707107, 0.15, 0.707107)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_bg48r"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_m878w"]
 size = Vector3(0.707107, 0.15, 0.707107)
 
 [node name="Token" type="RigidBody3D"]
 mass = 0.01
-continuous_cd = true
+max_contacts_reported = 1
+contact_monitor = true
 linear_velocity = Vector3(0, -5, 0)
 script = ExtResource("1_y4slo")
 jitter_influence = Vector3(1, 1, 0)
@@ -33,17 +34,19 @@ jitter_influence = Vector3(1, 1, 0)
 transform = Transform3D(1, 0.00063886, -0.000357102, -0.000638944, 1, -0.000232427, 0.000356951, 0.000232658, 1, 0, 0, 0)
 mesh = SubResource("CylinderMesh_11f54")
 
-[node name="@@20398" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_1eufo")
+[node name="@@38185" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_881qd")
 
-[node name="@@20399" type="CollisionShape3D" parent="."]
+[node name="@@38186" type="CollisionShape3D" parent="."]
 transform = Transform3D(-0.448074, 0, 0.893997, 0, 1, 0, -0.893997, 0, -0.448074, 0, 0, 0)
-shape = SubResource("BoxShape3D_a33px")
+shape = SubResource("BoxShape3D_fphaf")
 
-[node name="@@20400" type="CollisionShape3D" parent="."]
+[node name="@@38187" type="CollisionShape3D" parent="."]
 transform = Transform3D(-0.59846, 0, -0.801153, 0, 1, 0, 0.801153, 0, -0.59846, 0, 0, 0)
-shape = SubResource("BoxShape3D_esr2k")
+shape = SubResource("BoxShape3D_bkopf")
 
-[node name="@@20401" type="CollisionShape3D" parent="."]
+[node name="@@38188" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.984382, 0, -0.176046, 0, 1, 0, 0.176046, 0, 0.984382, 0, 0, 0)
-shape = SubResource("BoxShape3D_bg48r")
+shape = SubResource("BoxShape3D_m878w")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
